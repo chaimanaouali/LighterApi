@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from transformers import pipeline
 from typing import List
 
-classifier = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
+classifier = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english", framework="tf")
 
 app = FastAPI()
 
