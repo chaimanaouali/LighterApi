@@ -3,7 +3,9 @@ from pydantic import BaseModel
 from transformers import pipeline
 from typing import List
 
-classifier = pipeline("sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment", framework="tf")
+# Use PyTorch-backed model (default backend)
+classifier = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
+
 app = FastAPI()
 
 class CommentList(BaseModel):
